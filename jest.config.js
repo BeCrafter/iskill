@@ -12,7 +12,10 @@ module.exports = {
   coverageReporters: ['text', 'lcov'],
   transform: {},
   transformIgnorePatterns: [
-    'node_modules/(?!(chalk)/'
+    'node_modules/(?!chalk).*'
   ],
+  moduleNameMapper: {
+    '^chalk$': '<rootDir>/jest.mock.js'
+  },
   extensionsToTreatAsEsm: ['.ts']
 };

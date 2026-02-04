@@ -8,7 +8,7 @@ describe('Scanner', () => {
 
   beforeEach(() => {
     scanner = new Scanner();
-    testDir = path.join(__dirname, 'test-skills');
+    testDir = '/tmp/test-skills-' + Date.now();
   });
 
   afterEach(async () => {
