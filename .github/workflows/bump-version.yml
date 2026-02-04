@@ -1,0 +1,31 @@
+name: Bump Version
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  bump:
+    name: Bump Version
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Bump version
+        run: |
+          npm version patch
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Bumped to version ${VERSION}"
+          git push origin "v${VERSION}"
