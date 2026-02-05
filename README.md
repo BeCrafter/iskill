@@ -13,14 +13,16 @@ A flexible skill installation tool with custom path support. iskill allows you t
 
 ## Installation
 
-```bash
-npm install -g iskill
-```
-
-Or use without installation:
+No installation required! Use directly with npx:
 
 ```bash
 npx iskill <command>
+```
+
+If you prefer to install globally:
+
+```bash
+npm install -g iskill
 ```
 
 ## Quick Start
@@ -30,25 +32,25 @@ npx iskill <command>
 Install skills from a GitHub repository to a custom path:
 
 ```bash
-iskill add vercel-labs/agent-skills --path ./my-skills
+npx iskill add vercel-labs/agent-skills --path ./my-skills
 ```
 
 Install specific skills:
 
 ```bash
-iskill add vercel-labs/agent-skills --path ./my-skills --skill frontend-design
+npx iskill add vercel-labs/agent-skills --path ./my-skills --skill frontend-design
 ```
 
 List available skills without installing:
 
 ```bash
-iskill add vercel-labs/agent-skills --list
+npx iskill add vercel-labs/agent-skills --list
 ```
 
 ### List Installed Skills
 
 ```bash
-iskill list --path ./my-skills
+npx iskill list --path ./my-skills
 ```
 
 ### Search Skills
@@ -56,13 +58,13 @@ iskill list --path ./my-skills
 Search interactively:
 
 ```bash
-iskill find
+npx iskill find
 ```
 
 Search by keyword:
 
 ```bash
-iskill find typescript
+npx iskill find typescript
 ```
 
 ### Remove Skills
@@ -70,13 +72,13 @@ iskill find typescript
 Remove a specific skill:
 
 ```bash
-iskill remove frontend-design --path ./my-skills
+npx iskill remove frontend-design --path ./my-skills
 ```
 
 Remove all skills:
 
 ```bash
-iskill remove --all --path ./my-skills
+npx iskill remove --all --path ./my-skills
 ```
 
 ### Update Skills
@@ -84,29 +86,29 @@ iskill remove --all --path ./my-skills
 Check for updates:
 
 ```bash
-iskill check --path ./my-skills
+npx iskill check --path ./my-skills
 ```
 
 Update all skills:
 
 ```bash
-iskill update --path ./my-skills
+npx iskill update --path ./my-skills
 ```
 
 ### Create a New Skill
 
 ```bash
-iskill init my-skill
+npx iskill init my-skill
 ```
 
 ## Commands
 
-### `iskill add` / `iskill install`
+### `npx iskill add` / `npx iskill install`
 
 Install skills from a source to a specified path.
 
 ```bash
-iskill add <source> [options]
+npx iskill add <source> [options]
 ```
 
 **Arguments:**
@@ -123,27 +125,27 @@ iskill add <source> [options]
 
 ```bash
 # Install all skills from a repository
-iskill add vercel-labs/agent-skills --path ./skills
+npx iskill add vercel-labs/agent-skills --path ./skills
 
 # Install specific skills
-iskill add vercel-labs/agent-skills --path ./skills --skill frontend-design backend-helper
+npx iskill add vercel-labs/agent-skills --path ./skills --skill frontend-design backend-helper
 
 # List available skills
-iskill add vercel-labs/agent-skills --list
+npx iskill add vercel-labs/agent-skills --list
 
 # Use copy method instead of symlink
-iskill add vercel-labs/agent-skills --path ./skills --method copy
+npx iskill add vercel-labs/agent-skills --path ./skills --method copy
 
 # Install from local path
-iskill add ./local-skills --path ./installed-skills --method copy
+npx iskill add ./local-skills --path ./installed-skills --method copy
 ```
 
-### `iskill list` / `iskill ls`
+### `npx iskill list` / `npx iskill ls`
 
 List installed skills in a specified path.
 
 ```bash
-iskill list [options]
+npx iskill list [options]
 ```
 
 **Options:**
@@ -152,15 +154,15 @@ iskill list [options]
 **Example:**
 
 ```bash
-iskill list --path ./skills
+npx iskill list --path ./skills
 ```
 
-### `iskill find` / `iskill search`
+### `npx iskill find` / `npx iskill search`
 
 Search for skills interactively or by keyword.
 
 ```bash
-iskill find [query]
+npx iskill find [query]
 ```
 
 **Arguments:**
@@ -170,18 +172,18 @@ iskill find [query]
 
 ```bash
 # Interactive search
-iskill find
+npx iskill find
 
 # Search by keyword
-iskill find typescript
+npx iskill find typescript
 ```
 
-### `iskill remove` / `iskill rm`
+### `npx iskill remove` / `npx iskill rm`
 
 Remove installed skills from a specified path.
 
 ```bash
-iskill remove [skills...] [options]
+npx iskill remove [skills...] [options]
 ```
 
 **Arguments:**
@@ -197,21 +199,21 @@ iskill remove [skills...] [options]
 
 ```bash
 # Remove specific skill
-iskill remove frontend-design --path ./skills
+npx iskill remove frontend-design --path ./skills
 
 # Remove multiple skills
-iskill remove frontend-design backend-helper --path ./skills
+npx iskill remove frontend-design backend-helper --path ./skills
 
 # Remove all skills
-iskill remove --all --path ./skills
+npx iskill remove --all --path ./skills
 ```
 
-### `iskill check`
+### `npx iskill check`
 
 Check for available skill updates.
 
 ```bash
-iskill check [options]
+npx iskill check [options]
 ```
 
 **Options:**
@@ -220,15 +222,15 @@ iskill check [options]
 **Example:**
 
 ```bash
-iskill check --path ./skills
+npx iskill check --path ./skills
 ```
 
-### `iskill update`
+### `npx iskill update`
 
 Update installed skills to their latest versions.
 
 ```bash
-iskill update [options]
+npx iskill update [options]
 ```
 
 **Options:**
@@ -237,15 +239,15 @@ iskill update [options]
 **Example:**
 
 ```bash
-iskill update --path ./skills
+npx iskill update --path ./skills
 ```
 
-### `iskill init`
+### `npx iskill init`
 
 Create a new skill template.
 
 ```bash
-iskill init [name]
+npx iskill init [name]
 ```
 
 **Arguments:**
@@ -255,10 +257,10 @@ iskill init [name]
 
 ```bash
 # Create skill in current directory
-iskill init
+npx iskill init
 
 # Create skill in subdirectory
-iskill init my-skill
+npx iskill init my-skill
 ```
 
 ## Source Formats
@@ -266,37 +268,37 @@ iskill init my-skill
 ### GitHub Shorthand
 
 ```bash
-iskill add vercel-labs/agent-skills --path ./skills
+npx iskill add vercel-labs/agent-skills --path ./skills
 ```
 
 ### Full GitHub URL
 
 ```bash
-iskill add https://github.com/vercel-labs/agent-skills --path ./skills
+npx iskill add https://github.com/vercel-labs/agent-skills --path ./skills
 ```
 
 ### Direct Path to Skill
 
 ```bash
-iskill add https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines --path ./skills
+npx iskill add https://github.com/vercel-labs/agent-skills/tree/main/skills/web-design-guidelines --path ./skills
 ```
 
 ### GitLab URL
 
 ```bash
-iskill add https://gitlab.com/org/repo --path ./skills
+npx iskill add https://gitlab.com/org/repo --path ./skills
 ```
 
 ### Git URL
 
 ```bash
-iskill add git@github.com:vercel-labs/agent-skills.git --path ./skills
+npx iskill add git@github.com:vercel-labs/agent-skills.git --path ./skills
 ```
 
 ### Local Path
 
 ```bash
-iskill add ./local-skills --path ./installed-skills --method copy
+npx iskill add ./local-skills --path ./installed-skills --method copy
 ```
 
 ## Installation Methods
@@ -310,7 +312,7 @@ Creates symbolic links to the skill source. This is the default method and provi
 - Minimal disk space usage
 
 ```bash
-iskill add vercel-labs/agent-skills --path ./skills --method symlink
+npx iskill add vercel-labs/agent-skills --path ./skills --method symlink
 ```
 
 ### Copy
@@ -322,7 +324,7 @@ Creates independent copies of each skill. Use when:
 - You want to modify skills independently
 
 ```bash
-iskill add vercel-labs/agent-skills --path ./skills --method copy
+npx iskill add vercel-labs/agent-skills --path ./skills --method copy
 ```
 
 ## Configuration
