@@ -1,6 +1,6 @@
 {
   "name": "iskill",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A flexible skill installation tool with custom path support",
   "main": "dist/cli.js",
   "bin": {
